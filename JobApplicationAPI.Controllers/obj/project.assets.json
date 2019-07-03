@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationAPI\\JobApplicationAPI.Controllers\\JobApplicationAPI.Controllers.csproj",
+      "projectUniqueName": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationsAPI_RECOVERED\\CSharpLearning\\JobApplicationAPI.Controllers\\JobApplicationAPI.Controllers.csproj",
       "projectName": "JobApplicationAPI.Controllers",
-      "projectPath": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationAPI\\JobApplicationAPI.Controllers\\JobApplicationAPI.Controllers.csproj",
+      "projectPath": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationsAPI_RECOVERED\\CSharpLearning\\JobApplicationAPI.Controllers\\JobApplicationAPI.Controllers.csproj",
       "packagesPath": "C:\\Users\\Harry Liversedge\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationAPI\\JobApplicationAPI.Controllers\\obj\\",
+      "outputPath": "C:\\dev\\learning\\JobApplicationAPI\\JobApplicationsAPI_RECOVERED\\CSharpLearning\\JobApplicationAPI.Controllers\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
