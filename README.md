@@ -1,6 +1,6 @@
 # Job Finder API
 
-## Concpet
+## Concept
 
 On the front end there are 3 portals:
 
