@@ -3,7 +3,7 @@ using System;
 namespace JobApplicationAPI.Controllers
 {
     /* Abstract Handler */
-    abstract class JobApplicationHandler 
+    public abstract class JobApplicationHandler 
     {
         protected JobApplicationHandler successor;
         public void setSuccessor(JobApplicationHandler handler)
