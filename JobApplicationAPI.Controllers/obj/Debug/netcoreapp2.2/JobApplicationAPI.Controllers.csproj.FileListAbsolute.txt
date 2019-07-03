@@ -1,0 +1,11 @@
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.csproj.CoreCompileInputs.cache
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.AssemblyInfoInputs.cache
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.AssemblyInfo.cs
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.deps.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.runtimeconfig.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.runtimeconfig.dev.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.dll
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.pdb
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.dll
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.pdb
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\JobApplicationAPI.Controllers.csprojAssemblyReference.cache

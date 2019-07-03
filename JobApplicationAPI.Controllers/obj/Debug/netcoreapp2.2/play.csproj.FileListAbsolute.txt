@@ -1,0 +1,11 @@
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\play.deps.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\play.runtimeconfig.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\play.runtimeconfig.dev.json
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\play.dll
+C:\dev\learning\play\bin\Debug\netcoreapp2.2\play.pdb
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.csprojAssemblyReference.cache
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.csproj.CoreCompileInputs.cache
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.AssemblyInfoInputs.cache
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.AssemblyInfo.cs
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.dll
+C:\dev\learning\play\obj\Debug\netcoreapp2.2\play.pdb
