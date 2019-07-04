@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 using JobApplicationAPI.Controllers;
 using Moq;
@@ -46,9 +47,9 @@ namespace JobApplicationAPI.Tests
         }
 
         /* Mimics the return values from the DAO */
-        private JobDTO[] SelectPosts()
+        private List<JobDTO> SelectPosts()
         {
-            JobDTO[] jobs = new JobDTO[] {
+            List<JobDTO> jobs = new List<JobDTO>() {
                 new JobDTO("Software Engineering", "Internship", 40.0),
                 new JobDTO("Product Management", "Full Time", 80.0),
                 new JobDTO("Software Engineering", "Graduate Job", 60.0),

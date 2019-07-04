@@ -6,14 +6,14 @@ namespace JobApplicationAPI.Controllers
 {
     public interface IPostingsDAO
     {
-        JobDTO[] SelectPostsFor(Student application);
+        List<JobDTO> SelectPostsFor(Student application);
     }
 
     public class PostgresDAO : IPostingsDAO
     {
         private static PostgresDAO _instance;
 
-        private static string connString = "Host=localhost:5431;Username=root;Password=password;Database=jobs";
+        private static string connString = "Server=127.0.0.1; Port=5432; User Id=root;Password=password;Database=jobs";
 
         protected PostgresDAO()
         {  
@@ -48,17 +48,7 @@ namespace JobApplicationAPI.Controllers
                 {
                     cmd.Connection = conn;
 
-                    string command = "SELECT * FROM job_postings WHERE job_type IN (";
-
-                    var jobTypes = jobMappings[application.EducationLevel];
-                    foreach (var value in jobTypes)
-                    {
-                        command += "'" + value + "'";
-                    }
-
-                    command += ");";
-
-                    cmd.CommandText = command;
+                    cmd.CommandText = getQueryForEducationLevel(application.EducationLevel);
                     NpgsqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -71,6 +61,21 @@ namespace JobApplicationAPI.Controllers
             }
 
             return postings;
+        }
+
+        private string getQueryForEducationLevel(string educationLevel)
+        {
+            string command = "SELECT * FROM job_postings WHERE job_type IN (";
+
+            var jobTypes = jobMappings[application.EducationLevel];
+            foreach (var value in jobTypes)
+            {
+                command += "'" + value + "'";
+            }
+
+            command += ");";
+
+            return command;
         }
     }
 }
