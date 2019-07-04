@@ -4,15 +4,10 @@ using System.Text;
 
 namespace JobApplicationAPI.Controllers
 {
-    public class ResponseBuilder
+    public class StudentView
     {
         /* A successful response so formats the data for the frontend */
-        public static string success(JobPostingDTO[] results)
-        {
-            throw new NotImplementedException();
-        }
-        /* A failed response so formats the data for the frontend */
-        public static string failure()
+        public static string ResponseAsString(JobDTO[] results, String name, String message)
         {
             throw new NotImplementedException();
         }
