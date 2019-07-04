@@ -13,7 +13,7 @@ namespace JobApplicationAPI.Controllers
     {
         private static PostgresDAO _instance;
 
-        private static string connString = "Server=127.0.0.1; Port=5432; User Id=root;Password=password;Database=jobs";
+        private static string connString = "Server=127.0.0.1; Port=5432; Database=jobs; User Id=root; Password=password";
 
         protected PostgresDAO()
         {  
@@ -32,17 +32,9 @@ namespace JobApplicationAPI.Controllers
         {
             List<JobDTO> postings = new List<JobDTO>();
 
-            var jobMappings = new Dictionary<string, string[]>();
-            jobMappings.Add("Undergraduate", new string[] { "Internship", "Graduate Job" } );
-            jobMappings.Add("Postgraduate", new string[] { "Graduate Job", "Full Time" } );
-            jobMappings.Add("Professional", new string[] { "Full Time" } );
-
             using (var conn = new NpgsqlConnection(connString))
             {
                 conn.Open();
-
-                /* Select the job postings from the database
-                 * query is based on the education level*/
 
                 using (var cmd = new NpgsqlCommand())
                 {
@@ -53,7 +45,7 @@ namespace JobApplicationAPI.Controllers
 
                     while (reader.Read())
                     {
-                        postings.Add(new JobDTO((string)reader[0], (string)reader[1], (double)reader[2]));
+                        postings.Add(new JobDTO((string)reader[0], (string)reader[1], (Decimal)reader[2]));
                     }
 
                     conn.Close();
@@ -65,15 +57,14 @@ namespace JobApplicationAPI.Controllers
 
         private string getQueryForEducationLevel(string educationLevel)
         {
-            string command = "SELECT * FROM job_postings WHERE job_type IN (";
+            var jobMappings = new Dictionary<string, string[]>();
+            jobMappings.Add("Undergraduate", new string[] { " 'Internship' ", " 'Graduate Job' " });
+            jobMappings.Add("Postgraduate", new string[] { " 'Graduate Job' ", " 'Full Time' " });
+            jobMappings.Add("Professional", new string[] { " 'Full Time' " });
 
-            var jobTypes = jobMappings[application.EducationLevel];
-            foreach (var value in jobTypes)
-            {
-                command += "'" + value + "'";
-            }
+            var jobTypes = String.Join(",", jobMappings[educationLevel]);
 
-            command += ");";
+            string command = "SELECT * FROM job_postings WHERE job_type IN (" + jobTypes + ");";
 
             return command;
         }

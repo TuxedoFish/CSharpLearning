@@ -5,7 +5,7 @@ namespace JobApplicationAPI.Controllers
     /* A class to transfer data from postgres table */
     public class JobDTO
     {
-        public JobDTO(string name, string type, double requiredGrade)
+        public JobDTO(string name, string type, decimal requiredGrade)
         {
             this.Name = name;
             this.Type = type;
@@ -13,6 +13,6 @@ namespace JobApplicationAPI.Controllers
         }
         public string Name{ get; private set; }
         public string Type{ get; private set; }
-        public double RequiredGrade { get; private set; }
+        public decimal RequiredGrade { get; private set; }
     }
 }
