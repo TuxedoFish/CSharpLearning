@@ -6,12 +6,22 @@ namespace JobApplicationAPI.Controllers
     {
         protected Student model;
         protected StudentView view;
-        public StudentController(string name, double averageMark, string educationLevel)
+        protected PostgresDAO jobDAO;
+        public StudentController(string name, double averageMark, string educationLevel, PostgresDAO jobDAO)
         {
-            model = new Student(name, averageMark, educationLevel);
-            view = new StudentView();
+            this.model = new Student(name, averageMark, educationLevel);
+            this.view = new StudentView();
+            this.jobDAO = jobDAO;
         }
-        public JobDTO[] SearchJobs()
+        public bool search()
+        {
+            throw new NotImplementedException();
+        }
+        public string getView()
+        {
+            throw new NotImplementedException();
+        }
+        public JobDTO[] getJobsFound()
         {
             throw new NotImplementedException();
         }
