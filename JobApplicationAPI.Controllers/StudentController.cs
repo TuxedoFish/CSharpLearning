@@ -7,10 +7,11 @@ namespace JobApplicationAPI.Controllers
     {
         protected Student model;
         protected StudentView view;
-        protected PostgresDAO jobDAO;
+        protected IPostingsDAO jobDAO;
 
         private List<JobDTO> postings;
-        public StudentController(string name, decimal averageMark, string educationLevel, PostgresDAO jobDAO)
+
+        public StudentController(string name, decimal averageMark, string educationLevel, IPostingsDAO jobDAO)
         {
             this.model = new Student(name, averageMark, educationLevel);
             this.view = new StudentView();
@@ -25,7 +26,9 @@ namespace JobApplicationAPI.Controllers
                 postings = buffer;
             } else
             {
-                foreach (var job in buffer)
+                postings = new List<JobDTO>();
+
+                foreach (JobDTO job in buffer)
                 {
                     if(model.AverageMark >= job.RequiredGrade)
                     {
@@ -47,7 +50,12 @@ namespace JobApplicationAPI.Controllers
         }
         public string getView()
         {
-            throw new NotImplementedException();
+            if (postings is null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            return view.ResponseAsString(postings, model.Name, "unknown");
         }
     }
 }

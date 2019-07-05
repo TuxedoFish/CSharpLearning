@@ -6,10 +6,24 @@ namespace JobApplicationAPI.Controllers
 {
     public class StudentView
     {
-        /* A successful response so formats the data for the frontend */
+        /* Response */
         public string ResponseAsString(List<JobDTO> results, string name, string message)
         {
-            throw new NotImplementedException();
+            string response;
+
+            if(results is null || results.Count == 0)
+            {
+                response = "Sorry, " + name + " we were unable to match any jobs to you due to: " + message;
+            } else
+            {
+                response = "Congratulations, " + name + " found jobs that matched your profile: ";
+                foreach(JobDTO job in results)
+                {
+                    response += job.Name + " " + job.Type + " with a grade of " + job.RequiredGrade + " required ;";
+                }
+            }
+
+            return response;
         }
     }
 }

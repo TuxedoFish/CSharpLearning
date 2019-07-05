@@ -57,12 +57,7 @@ namespace JobApplicationAPI.Controllers
 
         private string getQueryForEducationLevel(string educationLevel)
         {
-            var jobMappings = new Dictionary<string, string[]>();
-            jobMappings.Add("Undergraduate", new string[] { " 'Internship' ", " 'Graduate Job' " });
-            jobMappings.Add("Postgraduate", new string[] { " 'Graduate Job' ", " 'Full Time' " });
-            jobMappings.Add("Professional", new string[] { " 'Full Time' " });
-
-            var jobTypes = String.Join(",", jobMappings[educationLevel]);
+            var jobTypes = String.Join(",", StaticConstants.jobMappings[educationLevel]);
 
             string command = "SELECT * FROM job_postings WHERE job_type IN (" + jobTypes + ");";
 
