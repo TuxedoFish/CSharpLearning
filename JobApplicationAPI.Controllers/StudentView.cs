@@ -16,10 +16,10 @@ namespace JobApplicationAPI.Controllers
                 response = "Sorry, " + name + " we were unable to match any jobs to you due to: " + message;
             } else
             {
-                response = "Congratulations, " + name + " found jobs that matched your profile: ";
+                response = "Congratulations, " + name + " we found jobs that matched your profile: ";
                 foreach(JobDTO job in results)
                 {
-                    response += job.Name + " " + job.Type + " with a grade of " + job.RequiredGrade + " required ;";
+                    response += job.Name + " " + job.Type+ " ; ";
                 }
             }
 
